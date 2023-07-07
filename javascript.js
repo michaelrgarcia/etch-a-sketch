@@ -17,6 +17,15 @@ changeSize.addEventListener("click", () => {
     }
 });
 
+reset.addEventListener("click", () => {
+    const container = document.querySelector(".container");
+    const boxes = container.querySelectorAll("div");
+    boxes.forEach((box) => {
+        if (box.className === "square hovered")
+        box.classList.remove("hovered");
+    });
+});
+
 function makeGrid(num) {
     const container = document.querySelector(".container");
     const currentSize = document.querySelector(".size-ctrl .current-size");
@@ -34,7 +43,7 @@ function makeGrid(num) {
 }
 
 function clearGrid() {
-    const container = document.querySelector(".container")
+    const container = document.querySelector(".container");
     const boxes = container.querySelectorAll("div");
     if (boxes) {
         boxes.forEach((box) => {
