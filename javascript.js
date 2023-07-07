@@ -12,8 +12,11 @@ changeSize.addEventListener("click", () => {
     } else if (input <= 0) {
         alert("Please enter a number larger than 0.");
     } else {
-        clearGrid();
-        makeGrid(input)
+        const check = prompt("This will clear your grid. Are you sure you want to do this?").toLowerCase()
+        if (check === "yes") {
+            clearGrid();
+            makeGrid(input);
+        }
     }
 });
 
