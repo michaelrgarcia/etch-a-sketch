@@ -3,6 +3,20 @@ const reset = document.querySelector(".size-ctrl .clear")
 
 makeGrid(16);
 
+changeSize.addEventListener("click", () => {
+    const input = prompt("Enter a size (max 100):", "16");
+    if (isNaN(input)) {
+        alert("Please enter a number.");
+    } else if (input > 100) {
+        alert("Please enter a number smaller than 100.", "");
+    } else if (input <= 0) {
+        alert("Please enter a number larger than 0.");
+    } else {
+        clearGrid();
+        makeGrid(input)
+    }
+});
+
 function makeGrid(num) {
     const container = document.querySelector(".container");
     const currentSize = document.querySelector(".size-ctrl .current-size");
@@ -17,6 +31,16 @@ function makeGrid(num) {
             });
         }
         currentSize.textContent = `Current Size: ${num} x ${num}`;
+}
+
+function clearGrid() {
+    const container = document.querySelector(".container")
+    const boxes = container.querySelectorAll("div");
+    if (boxes) {
+        boxes.forEach((box) => {
+            box.remove();
+        });
+    }
 }
 
 
