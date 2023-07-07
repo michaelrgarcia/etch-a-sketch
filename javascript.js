@@ -1,13 +1,22 @@
-const container = document.querySelector(".container");
+const changeSize = document.querySelector(".size-ctrl .grid-size");
+const reset = document.querySelector(".size-ctrl .clear")
 
-for (let i = 0; i <= 16; i++) {
-    const row = document.createElement("div")
-    row.className = "row";
-    row.id = `row${i}`;
-    for (let v = 0; v <= 16; v++) {
-        const box = document.createElement("div");
-        box.className = "square"
-        row.appendChild(box)
-    }
-    container.appendChild(row);
+makeGrid(16);
+
+function makeGrid(num) {
+    const container = document.querySelector(".container");
+    const currentSize = document.querySelector(".size-ctrl .current-size");
+    container.style.setProperty("--grid-rows", num)
+    container.style.setProperty("--grid-cols", num)
+        for (let v = 0; v < (num * num); v++) {
+            const box = document.createElement("div");
+            box.className = "square"
+            container.appendChild(box)
+            box.addEventListener("mouseover", () => {
+                box.classList.add("hovered");
+            });
+        }
+        currentSize.textContent = `Current Size: ${num} x ${num}`;
 }
+
+
