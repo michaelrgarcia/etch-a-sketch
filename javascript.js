@@ -24,8 +24,7 @@ reset.addEventListener("click", () => {
     const container = document.querySelector(".container");
     const boxes = container.querySelectorAll("div");
     boxes.forEach((box) => {
-        if (box.className === "square hovered")
-        box.classList.remove("hovered");
+        if (box.className === "square hovered") box.classList.remove("hovered");
     });
 });
 
@@ -39,7 +38,11 @@ function makeGrid(num) {
             box.className = "square"
             container.appendChild(box)
             box.addEventListener("mouseover", () => {
-                box.classList.add("hovered");
+                if (box.className !== "square hovered") {
+                    const randomColor = "#"+((1<<24)*Math.random()|0).toString(16);
+                    box.style.setProperty("--main-bg-color", randomColor);
+                    box.classList.add("hovered");
+                }
             });
         }
         currentSize.textContent = `Current Size: ${num} x ${num}`;
