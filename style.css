@@ -47,5 +47,6 @@ body {
 }
 
 .hovered {
-    background: black;
+    --main-bg-color: white;
+    background: var(--main-bg-color);
 }
