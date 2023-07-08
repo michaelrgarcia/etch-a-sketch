@@ -1,8 +1,13 @@
+* {
+    font-family: "Courier New", sans-serif;
+}
+
 body {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: rgba(248, 216, 216, 0.473);
 }
 
 .header {
@@ -15,6 +20,7 @@ body {
 
 .title {
     font-size: 40px;
+    text-decoration: underline;
 }
 
 .size-ctrl {
@@ -22,8 +28,22 @@ body {
     gap: 15px;
 }
 
+.size-ctrl .grid-size,
+.size-ctrl .clear {
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.size-ctrl .grid-size {
+    background: rgba(255, 0, 0, 0.5);
+}
+
 .size-ctrl .current-size {
-    margin-top: 1%;
+    margin-top: 2%;
+}
+
+.size-ctrl .clear {
+    padding: 0px 30px 0px 30px;
 }
 
 :root {
@@ -35,8 +55,8 @@ body {
     display:grid;
     grid-template-rows: repeat(var(--grid-rows), 1fr);
     grid-template-columns: repeat(var(--grid-cols), 1fr);
-    width: 900px;
-    height: 900px;
+    width: 700px;
+    height: 700px;
     margin: 35px;
     border: 3px groove black;
 }
