@@ -6,4 +6,4 @@ It will demonstrate my ability to learn new concepts with the only guidance bein
 
 The finished product will demonstrate my current capabilities with JavaScript.
 
-You can find it here: https://leavesturninsideyou.github.io/etch-a-sketch/
+You can find it here: https://michaelrgarcia.github.io/etch-a-sketch/
